@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://radha-rani-decorators.vercel.app/sitemap.xml
