@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "static-site",
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-rwebrick", "-e", "s=WEBrick::HTTPServer.new(:Port=>8080,:DocumentRoot=>'/tmp/shubh-site');trap('INT'){s.shutdown};s.start"],
+      "port": 8080
+    }
+  ]
+}
