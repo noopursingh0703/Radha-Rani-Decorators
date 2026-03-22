@@ -121,7 +121,6 @@
   // ===== GALLERY LIGHTBOX =====
   var lightbox = document.getElementById('lightbox');
   var lightboxContent = document.getElementById('lightboxContent');
-  var lightboxCaption = document.getElementById('lightboxCaption');
   var currentLightboxIndex = 0;
 
   function getVisibleItems() {
@@ -135,15 +134,13 @@
     if (index < 0 || index >= visible.length) return;
     currentLightboxIndex = index;
     var item = visible[index];
-    var svg = item.querySelector('svg');
-    var caption = item.querySelector('.gallery-overlay');
+    var media = item.querySelector('img') || item.querySelector('svg');
 
     lightboxContent.innerHTML = '';
-    var clonedSvg = svg.cloneNode(true);
-    clonedSvg.style.width = '100%';
-    clonedSvg.style.height = 'auto';
-    lightboxContent.appendChild(clonedSvg);
-    lightboxCaption.textContent = caption ? caption.textContent : '';
+    var cloned = media.cloneNode(true);
+    cloned.style.width = '100%';
+    cloned.style.height = 'auto';
+    lightboxContent.appendChild(cloned);
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   }

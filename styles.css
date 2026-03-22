@@ -98,8 +98,8 @@ section{position:relative;z-index:1;padding:90px 40px}
 .gallery-item{border-radius:8px;overflow:hidden;position:relative;cursor:pointer;background:#1a0508}
 .gallery-item.wide{grid-column:span 2}
 .gallery-item.tall{grid-row:span 2}
-.gallery-item svg{width:100%;height:100%;display:block;transition:transform .4s}
-.gallery-item:hover svg{transform:scale(1.06)}
+.gallery-item svg,.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gallery-item:hover svg,.gallery-item:hover img{transform:scale(1.06)}
 .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(107,15,26,.8) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:18px;color:#fff;font-size:.85rem;font-weight:700;letter-spacing:1px}
 .gallery-item:hover .gallery-overlay{opacity:1}
 
@@ -108,7 +108,7 @@ section{position:relative;z-index:1;padding:90px 40px}
 .lightbox.active{display:flex;opacity:1}
 .lightbox-content{max-width:900px;max-height:85vh;width:100%;position:relative;animation:lightboxIn .3s ease}
 @keyframes lightboxIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
-.lightbox-content svg{width:100%;height:auto;border-radius:10px}
+.lightbox-content svg,.lightbox-content img{width:100%;height:auto;max-height:80vh;object-fit:contain;border-radius:10px;display:block}
 .lightbox-caption{text-align:center;color:var(--gold-light);font-family:'Playfair Display',serif;font-size:1.2rem;margin-top:16px}
 .lightbox-close{position:absolute;top:-40px;right:0;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:color .2s}
 .lightbox-close:hover{color:var(--gold-light)}
