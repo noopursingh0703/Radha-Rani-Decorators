@@ -248,9 +248,9 @@
         formData.forEach(function(value, key) { data[key] = value; });
 
         // Store enquiry in localStorage as a simple static fallback
-        var enquiries = JSON.parse(localStorage.getItem('shubh_enquiries') || '[]');
+        var enquiries = JSON.parse(localStorage.getItem('radharani_enquiries') || '[]');
         enquiries.push({ ...data, timestamp: new Date().toISOString() });
-        localStorage.setItem('shubh_enquiries', JSON.stringify(enquiries));
+        localStorage.setItem('radharani_enquiries', JSON.stringify(enquiries));
 
         form.style.display = 'none';
         successMsg.style.display = 'block';
